@@ -4,7 +4,7 @@ const app = require("../app");
 const server = supertest(app);
 
 const mockUser = {
-  name: "Clark Kent",
+  username: "Clark Kent",
   email: "clark@superman.com",
   password: "Krypt()n8",
   preferences: ["movies", "comics"],
@@ -16,13 +16,13 @@ let token = "";
 
 tap.test("POST /users/signup", async (t) => {
   const response = await server.post("/users/signup").send(mockUser);
-  t.equal(response.status, 200);
+  t.equal(response.status, 201);
   t.end();
 });
 
 tap.test("POST /users/signup with missing email", async (t) => {
   const response = await server.post("/users/signup").send({
-    name: mockUser.name,
+    username: mockUser.username,
     password: mockUser.password,
   });
   t.equal(response.status, 400);

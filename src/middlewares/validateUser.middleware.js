@@ -26,7 +26,7 @@ function validateUser(req, res, next) {
       } else {
         const username = decodedString.username;
         const userId = decodedString.userId;
-
+        console.log("payload:", decodedString);
         (req.username = username), (req.userId = userId);
 
         next();

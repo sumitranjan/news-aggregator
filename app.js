@@ -8,8 +8,11 @@ app.use(express.urlencoded({ extended: true }));
 dotenv.config();
 
 const usersRoute = require("./src/routes/users.routes");
+const newsRoute = require("./src/routes/news.routes");
 
 app.use("/users", usersRoute);
+
+app.use("/", newsRoute);
 
 app.listen(port, (err) => {
   if (err) {
