@@ -11,6 +11,9 @@ A Node.js API using Express.js for user management and news aggregation. Feature
 - **Manage Preferences**: Retrieve and update user news preferences.
 - **Fetch News**: Get news articles based on preferences.
 
+## External API
+This project uses the [NewsAPI](https://newsapi.org) to fetch news articles. 
+
 ## Setup
 
 1. **Clone the Repository**
@@ -28,6 +31,7 @@ A Node.js API using Express.js for user management and news aggregation. Feature
 
    ```bash
    SECRET_JWT=your_jwt_secret
+   NEWS_API_KEY=newsapi_key
 
 4. **Start the Server**
 
